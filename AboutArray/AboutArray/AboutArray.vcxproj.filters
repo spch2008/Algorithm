@@ -18,7 +18,7 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Tree Symmetry.cpp">
+    <ClCompile Include="AboutArray.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

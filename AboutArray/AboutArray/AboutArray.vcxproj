@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{4BBB301A-2BEE-4A3E-A5A3-0AD970BFB6A6}</ProjectGuid>
+    <ProjectGuid>{14DF7137-1C84-40FF-A567-B429E7E3629E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>TreeSymmetry</RootNamespace>
+    <RootNamespace>AboutArray</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -77,7 +77,7 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Tree Symmetry.cpp" />
+    <ClCompile Include="AboutArray.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
