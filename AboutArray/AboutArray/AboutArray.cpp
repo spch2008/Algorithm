@@ -75,7 +75,7 @@ int main(int argc, char* argv[])
 */
 
 
-/*
+
 //题目2:数组有正有负，值为0
 
 //思路：
@@ -120,7 +120,26 @@ void EffectiveMethod(int *arr, int N)
 	}
 
 
-	
+	int result = prefix[0];
+	int k = 0;
+	for(int i=0, j = 0; j <= N; j++)
+	{
+		while( result > k && i < j - 1 )
+		{
+			i++;
+			result = prefix[j-1] - prefix[i];
+		}
+		if(result == k && index[j] >= index[i])
+		{
+			cout << "start: " << i << " end: " << j << endl;
+		}
+		
+		if( j < N)
+			result = prefix[j] - prefix[i];
+	}
+
+
+/*	
 	for(int i = 0; i < N; i++)
 	{
 		if(prefix[i] == 0)                                                 //处理单独0的情况，若有多个0，则每个0算一种：从开头到0处，
@@ -136,7 +155,7 @@ void EffectiveMethod(int *arr, int N)
 				break;
 		}
 	}
-	
+*/	
 	delete [] index;
 	delete [] prefix;
 }
@@ -152,17 +171,14 @@ int main()
 	system("pause");
 	return 0;
 }
-*/
+
 
 
 //题目3：有正有负，值为k
 //类似于题目2，只是prefix数组中两数相减得k
-//那如何做呢
+//如果可以将此题转变成题目2，那就可以方便作答啦。
 
-//1. i = 1, j = 1, s = 0;
-//2. if prefix[j] – prefix[i] == k then you’ve found the solution.// and of course index[j] >= index[ i]
-//3. else if, prefix[j] – prefix[i] < k then j++ and go to step 2.
-//4. else, i++ and go to step 2.
+
 
 //题目4:有正有负，值为k，但求最长子数组
 //法1：如果采用插入排序，则插入排序具有稳定性，比如等于k，则prefix中间距最大
@@ -252,4 +268,31 @@ int main()
 //i j表示当前正在处理的区间，start， end表示当前最大子序列和 
 //全负的情况，如果要求返回最大负数，则需要进行记录
 
+*/
+
+
+
+/* 参考资料
+1.全正数，值为k
+http://www.geeksforgeeks.org/find-subarray-with-given-sum/
+http://www.youtube.com/watch?v=A7xC2Ngxpuk
+
+2.有正有负 ，值等于0
+http://www.cnblogs.com/yayagamer/archive/2012/06/24/2560255.html
+http://stackoverflow.com/questions/5534063/zero-sum-subarray/11611482#11611482
+
+3.有正有负，值等于k
+method2： http://doctorinterview.com/algorithmscoding/how-will-you-find-the-subarray-whose-sum-is-k-in-an-array-of-negative-and-positive-numbers/
+类似于上述2
+
+
+4.有正有负，值大于等于k最长值
+http://stackoverflow.com/questions/13476927/longest-contiguous-subarray-with-average-greater-than-or-equal-to-k
+http://mathoverflow.net/questions/112422/largest-subarray-with-average-geq-k
+
+5. 最大子数组和，记录起始位置
+http://flexaired.blogspot.com/2013/05/longest-contiguous-subarray-with.html
+
+拓展
+http://www.dsalgo.com/2013/03/longest-subarray-with-equal-number-of.html
 */
