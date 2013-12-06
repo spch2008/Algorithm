@@ -4,7 +4,8 @@
 #include <iostream>
 #include <cstdlib>
 #include <set>
-
+#include <vector>
+#include <list>
 using namespace std;
 
 
@@ -15,7 +16,7 @@ struct node
 	char value;
 };
 
-
+/*
 void rebuild(char *postOrder, char *inOrder, int treeLen, node **root)
 {
 	if(inOrder == NULL || postOrder == NULL)
@@ -52,10 +53,10 @@ void rebuild(char *postOrder, char *inOrder, int treeLen, node **root)
 		rebuild(oldPostOrder, inOrder, treeLeftLen, &((*root)->left) );
 
 }
+*/
 
 
 
-/*
 //重建过程，关键在于新中序的查找
 void rebuild(char* preOrder, char *inOrder, int treeLen, node **root)
 {
@@ -76,8 +77,17 @@ void rebuild(char* preOrder, char *inOrder, int treeLen, node **root)
 	//find left tree from inOrder
 	char *inRootPos = inOrder;
 	char rootVal  = *preOrder;
+	int tmpLen = 0;
 	while( rootVal != *inRootPos)
+	{
+		if(inRootPos == NULL)
+			return;
+
+		tmpLen++;
+		if(tmpLen > treeLen)
+			break;
 		inRootPos++;
+	}
 
 	int leftTreeLen  = inRootPos - inOrder;
 	int rightTreeLen = treeLen - leftTreeLen - 1; 
@@ -88,7 +98,7 @@ void rebuild(char* preOrder, char *inOrder, int treeLen, node **root)
 	if(rightTreeLen > 0)
 		rebuild(preOrder + leftTreeLen + 1, inRootPos + 1, rightTreeLen, &((*root)->right) );
 }
-*/
+
 void preVisit(node *root)
 {
 	if( root != NULL)
@@ -109,10 +119,13 @@ void inVisit(node *root)
 	}
 }
 
+
+
+
 int main()
 {
-	char *preOrder = "dbefca";
-	char *inOrder  = "dbaecf";
+	char *preOrder = "124536897";
+	char *inOrder  = "425186937";
 
 	node *root = NULL;
 	rebuild(preOrder, inOrder, strlen(preOrder), &root);
@@ -122,6 +135,12 @@ int main()
 	inVisit(root);
 	cout << endl;
 
+	//visitAtLevel(root, 2);
+	cout << endl;
+
+	//levelVisitRecur(root);
+	//levelVisitNonRecur(root);
+	cout << endl;
 	system("pause");
 	return 0;
 }

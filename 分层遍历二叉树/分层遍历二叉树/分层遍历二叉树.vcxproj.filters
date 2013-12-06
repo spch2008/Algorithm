@@ -26,7 +26,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="重建二叉树.cpp">
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="分层遍历二叉树.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
