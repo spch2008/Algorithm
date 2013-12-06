@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{99B8FA8D-8D4B-446A-BF33-6953E8BBB53B}</ProjectGuid>
+    <ProjectGuid>{4AD26C8C-9274-433E-9212-1CDABE789370}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>分层遍历二叉树</RootNamespace>
+    <RootNamespace>队列中取最大值操作</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -77,7 +77,7 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="分层遍历二叉树.cpp" />
+    <ClCompile Include="队列中取最大值操作.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
